@@ -1,4 +1,4 @@
-const BASE_URL = "http://smartuniversity.runasp.net/api";
+const BASE_URL = "https://smartuniversity.runasp.net/api";
 
 async function loginUser(email, password) {
     const response = await fetch(`${BASE_URL}/auth/login`, {
