@@ -1,0 +1,100 @@
+<!-- Section: Assignments -->
+  <div class="section-content" id="section-assignments">
+    <div class="flex justify-between items-center mb-8">
+      <h2 class="text-2xl font-bold">Assignments & Quizzes</h2>
+      <div class="flex gap-3">
+        <button class="bg-white border border-slate-200 text-slate-700 px-6 py-3 rounded-2xl font-bold" onclick="toggleModal('modal-add-quiz')">Create Quiz</button>
+        <button class="bg-primary-container text-white px-6 py-3 rounded-2xl font-bold" onclick="toggleModal('modal-add-assignment')">Add Assignment</button>
+      </div>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div class="bg-white p-6 rounded-3xl border border-slate-100 shadow-sm">
+        <h3 class="font-bold mb-4 flex items-center gap-2">
+          <span class="material-symbols-outlined text-orange-500">assignment</span> Active Assignments
+        </h3>
+        <div class="p-4 border border-slate-50 rounded-2xl">
+          <div class="flex justify-between items-start mb-2">
+            <h4 class="font-bold">Java Programming - Assignment 3</h4>
+            <span class="px-2 py-1 bg-orange-100 text-orange-700 rounded-lg text-[10px] font-bold">In Progress</span>
+          </div>
+          <p class="text-xs text-slate-500 mb-4">Deadline: Oct 25, 2023</p>
+          <div class="flex justify-between items-center">
+            <span class="text-xs font-bold text-primary-container">45 New Submissions</span>
+            <button class="text-sm font-bold text-slate-400 hover:text-on-surface">View All</button>
+          </div>
+        </div>
+      </div>
+      <div class="bg-white p-6 rounded-3xl border border-slate-100 shadow-sm">
+        <h3 class="font-bold mb-4 flex items-center gap-2">
+          <span class="material-symbols-outlined text-blue-500">quiz</span> Scheduled Quizzes
+        </h3>
+        <div class="p-4 border border-slate-50 rounded-2xl">
+          <div class="flex justify-between items-start mb-2">
+            <h4 class="font-bold">Periodic Quiz - Operating Systems</h4>
+            <span class="px-2 py-1 bg-green-100 text-green-700 rounded-lg text-[10px] font-bold">Completed</span>
+          </div>
+          <p class="text-xs text-slate-500 mb-4">Date: Oct 18, 2023</p>
+          <div class="flex justify-between items-center">
+            <span class="text-xs font-bold text-primary-container">Average Grade: 82%</span>
+            <button class="text-sm font-bold text-slate-400">View Results</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  ------------------------------------------------------------------
+  <a class="nav-link flex items-center gap-4 px-6 py-3 text-slate-600 hover:bg-slate-50 font-medium text-sm transition-all rounded-xl" href="#" onclick="showSection('assignments')">
+      <span class="material-symbols-outlined">assignment</span>
+      <span>Assignments & Quizzes</span>
+    </a>
+    ------------------------------------------------------------
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div class="bg-white p-6 rounded-3xl border border-slate-100 shadow-sm">
+        <h3 class="font-bold mb-4 flex items-center gap-2">
+          <span class="material-symbols-outlined text-orange-500">assignment</span> Active Assignments
+        </h3>
+        <div class="p-4 border border-slate-50 rounded-2xl">
+          <div class="flex justify-between items-start mb-2">
+            <h4 class="font-bold">Java Programming - Assignment 3</h4>
+            <span class="px-2 py-1 bg-orange-100 text-orange-700 rounded-lg text-[10px] font-bold">In Progress</span>
+          </div>
+          <p class="text-xs text-slate-500 mb-4">Deadline: Oct 25, 2023</p>
+          <div class="flex justify-between items-center">
+            <span class="text-xs font-bold text-primary-container">45 New Submissions</span>
+            <button class="text-sm font-bold text-slate-400 hover:text-on-surface">View All</button>
+          </div>
+        </div>
+      </div>
+      <div class="bg-white p-6 rounded-3xl border border-slate-100 shadow-sm">
+        <h3 class="font-bold mb-4 flex items-center gap-2">
+          <span class="material-symbols-outlined text-blue-500">quiz</span> Scheduled Quizzes
+        </h3>
+        <div class="p-4 border border-slate-50 rounded-2xl">
+          <div class="flex justify-between items-start mb-2">
+            <h4 class="font-bold">Periodic Quiz - Operating Systems</h4>
+            <span class="px-2 py-1 bg-green-100 text-green-700 rounded-lg text-[10px] font-bold">Completed</span>
+          </div>
+          <p class="text-xs text-slate-500 mb-4">Date: Oct 18, 2023</p>
+          <div class="flex justify-between items-center">
+            <span class="text-xs font-bold text-primary-container">Average Grade: 82%</span>
+            <button class="text-sm font-bold text-slate-400">View Results</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    -----------------------------------------------
+     <!-- Section: Events -->
+  <div class="section-content" id="section-assignments">
+    <div class="flex justify-between items-center mb-8">
+      <h2 class="text-2xl font-bold">Events & News</h2>
+      <div class="flex gap-3">
+        
+        <button class="bg-primary-container text-white px-6 py-3 rounded-2xl font-bold" onclick="toggleModal('modal-add-assignment')">Add Event</button>
+        <button class="bg-primary-container text-white px-6 py-3 rounded-2xl font-bold" onclick="toggleModal('modal-add-assignment')">Add News</button>
+      </div>
+    </div>
+    
+  </div>
+
+  -------------------------------------------
+  <body class="min-h-screen bg-gradient-to-br from-purple-50 to-pink-50 flex items-center justify-center p-6">

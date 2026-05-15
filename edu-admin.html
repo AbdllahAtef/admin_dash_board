@@ -1,0 +1,1028 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+  <!-- Tailwind Config -->
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "on-primary-fixed": "#3c002c",
+            "tertiary-container": "#00517d",
+            "secondary-fixed-dim": "#d7c1c8",
+            "outline": "#86717b",
+            "on-error-container": "#93000a",
+            "error": "#ba1a1a",
+            "primary-container": "#8b1a6b",
+            "on-surface-variant": "#54424b",
+            "on-surface": "#161d1f",
+            "error-container": "#ffdad6",
+            "on-secondary-container": "#716066",
+            "primary-fixed-dim": "#ffaedc",
+            "on-primary-container": "#ff9fd7",
+            "inverse-primary": "#ffaedc",
+            "background": "#f4fafd",
+            "surface-variant": "#dde4e6",
+            "secondary-container": "#f4dce4",
+            "on-tertiary-fixed": "#001d32",
+            "outline-variant": "#d9c0cb",
+            "surface-container-lowest": "#ffffff",
+            "surface-container": "#e8eff1",
+            "on-primary-fixed-variant": "#841265",
+            "on-secondary-fixed": "#25181e",
+            "on-error": "#ffffff",
+            "secondary": "#6b5a60",
+            "on-background": "#161d1f",
+            "surface-tint": "#a2307e",
+            "surface-container-high": "#e2e9ec",
+            "on-secondary-fixed-variant": "#524249",
+            "on-secondary": "#ffffff",
+            "on-tertiary": "#ffffff",
+            "tertiary-fixed": "#cde5ff",
+            "secondary-fixed": "#f4dce4",
+            "on-primary": "#ffffff",
+            "surface": "#f4fafd",
+            "tertiary-fixed-dim": "#94ccff",
+            "on-tertiary-container": "#80c4ff",
+            "inverse-surface": "#2b3234",
+            "primary-fixed": "#ffd8eb",
+            "surface-bright": "#f4fafd",
+            "tertiary": "#00395a",
+            "surface-container-highest": "#dde4e6",
+            "on-tertiary-fixed-variant": "#004b74",
+            "surface-dim": "#d4dbdd",
+            "inverse-on-surface": "#ebf2f4",
+            "surface-container-low": "#eef5f7",
+            "primary": "#6a0050"
+          },
+          borderRadius: {
+            DEFAULT: "0.25rem", lg: "0.5rem", xl: "0.75rem", full: "9999px"
+          },
+          spacing: {
+            xs: "4px", "container-margin": "20px", xl: "40px",
+            sm: "12px", base: "8px", md: "16px", lg: "24px", gutter: "16px"
+          },
+          fontFamily: {
+            "label-bold": ["Inter"], "body-lg": ["Inter"], "label-sm": ["Inter"],
+            h1: ["Plus Jakarta Sans"], "body-md": ["Inter"],
+            h3: ["Plus Jakarta Sans"], h2: ["Plus Jakarta Sans"]
+          },
+          fontSize: {
+            "label-bold": ["12px", {lineHeight:"1.2",letterSpacing:"0.05em",fontWeight:"600"}],
+            "body-lg": ["16px", {lineHeight:"1.6",fontWeight:"400"}],
+            "label-sm": ["11px", {lineHeight:"1.2",fontWeight:"500"}],
+            h1: ["32px", {lineHeight:"1.2",fontWeight:"700"}],
+            "body-md": ["14px", {lineHeight:"1.5",fontWeight:"400"}],
+            h3: ["20px", {lineHeight:"1.4",fontWeight:"600"}],
+            h2: ["24px", {lineHeight:"1.3",fontWeight:"700"}]
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="edu-style.css"/>
+
+  <title>EduAdmin Central</title>
+</head>
+<body class="text-on-surface">
+
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-40 bg-white/80 backdrop-blur-md border-b border-slate-100 shadow-sm flex items-center justify-between px-6 py-4">
+  <div class="flex items-center gap-4">
+    <div class="w-10 h-10 rounded-full overflow-hidden border-2 border-primary-container">
+      <img alt="Admin Profile" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxqwgT4bNlrx3aJr_dSL23js__Di8YP6-KO-nbQNMAksISp4n94jjfMCYfWM0Sz74dvePSkJBNGBUU2SRws-wFtaMkxPwLhTIjXjkMWEsd9VrS57VQ1tytII38HSREx_KTEMVZPmGhLueSZi7YDSei6I3mGpTNBKMCPOwJds-7MuuHiYB_rZtTNr0QYekMphjf0k6M0ggyU8ubW5hDcSQQZBtx83pbM0guIOEu4bH6JRA8bdSS7XjY8xBYzc73HaYKXfGjiflpqU4"/>
+    </div>
+    <h1 class="font-['Plus_Jakarta_Sans'] font-extrabold text-xl text-[#8B1A6B] tracking-tight">EduAdmin Central</h1>
+  </div>
+  <div class="flex items-center gap-3">
+    <button class="p-2 rounded-full hover:bg-slate-50 transition-colors text-slate-500">
+      <span class="material-symbols-outlined">search</span>
+    </button>
+    <button class="p-2 rounded-full hover:bg-slate-50 transition-colors text-slate-500 relative">
+      <span class="material-symbols-outlined">notifications</span>
+      <span class="absolute top-2 right-2 w-2 h-2 bg-error rounded-full"></span>
+    </button>
+  </div>
+</header>
+
+<!-- NavigationDrawer (Desktop) -->
+<aside class="fixed left-0 top-0 z-50 h-screen w-72 hidden lg:flex flex-col bg-white border-r border-slate-100">
+  <div class="text-[#8B1A6B] font-black text-2xl px-6 py-8">EduAdmin</div>
+  <nav class="flex-1 px-4 space-y-1 overflow-y-auto">
+    <a class="nav-link flex items-center gap-4 px-6 py-3 text-[#8B1A6B] bg-purple-50 border-l-4 border-[#8B1A6B] font-medium text-sm transition-all rounded-r-xl" href="#" onclick="showSection('dashboard')">
+      <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">dashboard</span>
+      <span>Dashboard</span>
+    </a>
+    <a class="nav-link flex items-center gap-4 px-6 py-3 text-slate-600 hover:bg-slate-50 font-medium text-sm transition-all rounded-xl" href="#" onclick="showSection('users')">
+      <span class="material-symbols-outlined">group</span>
+      <span>User Management</span>
+    </a>
+    <a class="nav-link flex items-center gap-4 px-6 py-3 text-slate-600 hover:bg-slate-50 font-medium text-sm transition-all rounded-xl" href="#" onclick="showSection('faculties')">
+      <span class="material-symbols-outlined">account_balance</span>
+      <span>Faculties & Departments</span>
+    </a>
+    <a class="nav-link flex items-center gap-4 px-6 py-3 text-slate-600 hover:bg-slate-50 font-medium text-sm transition-all rounded-xl" href="#" onclick="showSection('courses')">
+      <span class="material-symbols-outlined">school</span>
+      <span>Course Catalog</span>
+    </a>
+    <a class="nav-link flex items-center gap-4 px-6 py-3 text-slate-600 hover:bg-slate-50 font-medium text-sm transition-all rounded-xl" href="#" onclick="showSection('enrollment')">
+      <span class="material-symbols-outlined">person_add</span>
+      <span>Enrollment & Admissions</span>
+    </a>
+    
+    <a class="nav-link flex items-center gap-4 px-6 py-3 text-slate-600 hover:bg-slate-50 font-medium text-sm transition-all rounded-xl" href="#" onclick="showSection('results')">
+      <span class="material-symbols-outlined">analytics</span>
+      <span>Results & Reports</span>
+    </a>
+    <a class="nav-link flex items-center gap-4 px-6 py-3 text-slate-600 hover:bg-slate-50 font-medium text-sm transition-all rounded-xl" href="#" onclick="showSection('assignments')">
+      <span class="material-symbols-outlined">assignment</span>
+      <span>Events & News</span>
+    </a>
+  </nav>
+  <div class="p-6 border-t border-slate-100">
+    <div class="flex items-center gap-3">
+      <div class="w-10 h-10 rounded-xl bg-primary-container flex items-center justify-center text-white">
+        <span class="material-symbols-outlined">admin_panel_settings</span>
+      </div>
+      <div>
+        <p class="text-sm font-bold text-on-surface">System Admin</p>
+        <p class="text-xs text-slate-500">University Admin</p>
+      </div>
+    </div>
+  </div>
+</aside>
+
+<!-- Main Workspace -->
+<main class="pt-24 pb-32 px-6 lg:ml-72 lg:pb-12 min-h-screen">
+
+  <!-- Section: Dashboard -->
+  <div class="section-content active" id="section-dashboard">
+    <section class="mb-10">
+      <div class="flex justify-between items-start">
+        <div>
+          <h2 class="font-h1 text-h1 text-on-surface mb-2">Overview</h2>
+          <p class="text-body-lg text-slate-600">A comprehensive view of performance indicators and ongoing operations.</p>
+        </div>
+        <div class="flex items-center gap-2 bg-purple-100 text-[#8B1A6B] px-4 py-2 rounded-full text-sm font-bold animate-pulse">
+          <span class="material-symbols-outlined text-sm">auto_awesome</span>
+          AI Insights Active
+        </div>
+      </div>
+    </section>
+
+    <!-- <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
+      
+      <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-100">
+        <div class="flex items-center justify-between mb-4">
+          <div class="w-12 h-12 rounded-2xl bg-purple-50 flex items-center justify-center text-primary-container">
+            <span class="material-symbols-outlined">group</span>
+          </div>
+          <span class="text-green-600 text-sm font-bold">+12%</span>
+        </div>
+        <p class="text-slate-500 text-sm mb-1">Total Students</p>
+        <p class="text-2xl font-bold text-on-surface">12,450</p>
+      </div>
+      <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-100">
+        <div class="flex items-center justify-between mb-4">
+          <div class="w-12 h-12 rounded-2xl bg-blue-50 flex items-center justify-center text-blue-600">
+            <span class="material-symbols-outlined">school</span>
+          </div>
+          <span class="text-slate-400 text-sm">Stable</span>
+        </div>
+        <p class="text-slate-500 text-sm mb-1">Active Courses</p>
+        <p class="text-2xl font-bold text-on-surface">342</p>
+      </div>
+      <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-100">
+        <div class="flex items-center justify-between mb-4">
+          <div class="w-12 h-12 rounded-2xl bg-orange-50 flex items-center justify-center text-orange-600">
+            <span class="material-symbols-outlined">how_to_reg</span>
+          </div>
+          <span class="text-green-600 text-sm font-bold">+5%</span>
+        </div>
+        <p class="text-slate-500 text-sm mb-1">Enrollment Requests</p>
+        <p class="text-2xl font-bold text-on-surface">1,280</p>
+      </div>
+      <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-100">
+        <div class="flex items-center justify-between mb-4">
+          <div class="w-12 h-12 rounded-2xl bg-pink-50 flex items-center justify-center text-pink-600">
+            <span class="material-symbols-outlined">analytics</span>
+          </div>
+          <span class="text-red-600 text-sm font-bold">-2%</span>
+        </div>
+        <p class="text-slate-500 text-sm mb-1">Success Rate</p>
+        <p class="text-2xl font-bold text-on-surface">84.5%</p>
+      </div>
+    </div> -->
+    <!-- AI Insights -->
+<div class="bg-white p-8 rounded-3xl border border-slate-100 shadow-sm mb-10">
+
+  <div class="flex justify-between items-center mb-6">
+
+    <div>
+      <h3 class="text-2xl font-bold">
+        AI Academic Insights
+      </h3>
+
+      <p class="text-sm text-slate-500">
+        Analyze course students performance using AI
+      </p>
+    </div>
+
+    <div class="flex gap-3 items-end">
+
+    <div class="flex flex-col gap-2">
+
+        <label
+            class="text-sm font-semibold text-slate-600">
+
+            Faculty
+
+        </label>
+
+        <select
+            id="ai-faculty-select"
+            class="bg-slate-50 rounded-2xl px-4 py-3 text-sm min-w-[220px] border border-slate-200">
+
+        </select>
+
+    </div>
+
+    <div class="flex flex-col gap-2">
+
+        <label
+            class="text-sm font-semibold text-slate-600">
+
+            Course
+
+        </label>
+
+        <select
+            id="ai-course-select"
+            class="bg-slate-50 rounded-2xl px-4 py-3 text-sm min-w-[220px] border border-slate-200">
+
+        </select>
+
+    </div>
+
+    <button
+        id="analyze-ai-btn"
+        class="bg-primary-container text-white px-6 py-3 rounded-2xl font-bold h-[50px]">
+
+        Analyze
+
+    </button>
+
+</div>
+
+  </div>
+
+  <div class="overflow-x-auto">
+
+    <table class="w-full text-left">
+
+      <thead>
+
+        <tr class="text-slate-400 text-xs font-bold">
+
+          <th class="pb-4">Student</th>
+
+          <th class="pb-4">Academic Score</th>
+
+          <th class="pb-4">Risk Level</th>
+
+          <th class="pb-4">Fail Probability</th>
+
+        </tr>
+
+      </thead>
+
+      <tbody id="ai-results-body">
+
+      </tbody>
+
+    </table>
+
+  </div>
+
+</div>
+  </div>
+
+  <!-- Section: Users -->
+  <div class="section-content" id="section-users">
+    <div class="flex justify-between items-center mb-8">
+      <div>
+        <h2 class="text-2xl font-bold text-on-surface">User Management</h2>
+        <p class="text-sm text-slate-500">Manage student and faculty accounts</p>
+      </div>
+      <button class="bg-primary-container text-white px-6 py-3 rounded-2xl font-bold flex items-center gap-2 shadow-lg shadow-purple-900/20" onclick="openAddUserModal()">
+        <span class="material-symbols-outlined">add</span> Add User
+      </button>
+    </div>
+    <div class="bg-white rounded-3xl p-6 border border-slate-100 shadow-sm">
+      <div class="flex gap-4 mb-6">
+        <button class="filter-btn px-4 py-2 bg-primary-container text-white rounded-xl text-sm font-bold">All</button>
+<button class="filter-btn px-4 py-2 bg-slate-50 text-slate-600 rounded-xl text-sm font-medium hover:bg-slate-100">Students</button>
+<button class="filter-btn px-4 py-2 bg-slate-50 text-slate-600 rounded-xl text-sm font-medium hover:bg-slate-100">Doctors</button>
+<button class="filter-btn px-4 py-2 bg-slate-50 text-slate-600 rounded-xl text-sm font-medium hover:bg-slate-100">Admins</button>
+        <div class="flex-1"></div>
+        <input class="bg-slate-50 border-none rounded-xl px-4 py-2 text-sm focus:ring-2 focus:ring-primary-container w-64" placeholder="Search users..." type="text"/>
+      </div>
+      <div class="overflow-x-auto">
+        <table class="w-full text-left border-separate border-spacing-y-2">
+          <thead>
+            <tr class="text-slate-400 text-xs font-bold uppercase tracking-wider">
+              <th class="pb-3 pl-4">Name</th>
+              <th class="pb-3">National Id</th>
+              <th class="pb-3">Email</th>
+              <th class="pb-3">Role</th>
+              <th class="pb-3">Faculty</th>
+              <th class="pb-3">Status</th>
+              <th class="pb-3 pr-4">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="bg-slate-50/50 rounded-2xl group hover:bg-white transition-colors">
+              <td class="py-4 pl-4 rounded-l-2xl font-bold">Ahmed Mohammed Ali</td>
+              <td class="text-sm">30308125104562</td>
+              <td class="text-sm">ahmedmohamed@gmail.com</td>
+              <td class="text-sm">Student</td>
+              <td class="text-sm">Computer Science</td>
+              <td><span class="px-3 py-1 bg-green-100 text-green-700 rounded-full text-[10px] font-bold">Active</span></td>
+              <td class="rounded-r-2xl pr-4">
+                <div class="flex gap-1">
+                  <button class="p-2 text-primary-container hover:bg-purple-50 rounded-lg"><span class="material-symbols-outlined text-xl">edit</span></button>
+                  <button class="p-2 text-error hover:bg-red-50 rounded-lg"><span class="material-symbols-outlined text-xl">delete</span></button>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <div id="pagination" class="flex gap-2 mt-4 justify-center"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section: Faculties -->
+  <div class="section-content" id="section-faculties">
+    <div class="flex justify-between items-center mb-8">
+      <div>
+        <h2 class="text-2xl font-bold text-on-surface">Faculties & Departments</h2>
+        <p class="text-sm text-slate-500">Manage university academic structure</p>
+      </div>
+      <button class="bg-primary-container text-white px-6 py-3 rounded-2xl font-bold flex items-center gap-2" onclick="toggleModal('modal-add-faculty')">
+        <span class="material-symbols-outlined">add</span> Add Faculty
+      </button>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    </div>
+  </div>
+
+ <!-- Section: Courses -->
+  <div class="section-content" id="section-courses">
+    <div class="flex justify-between items-center mb-8">
+      <h2 class="text-2xl font-bold">Course Catalog</h2>
+      <button class="bg-primary-container text-white px-6 py-3 rounded-2xl font-bold flex items-center gap-2" onclick="toggleModal('modal-add-course')">
+        <span class="material-symbols-outlined">add</span> Add Course
+      </button>
+    </div>
+    <div class="bg-white rounded-3xl overflow-hidden border border-slate-100">
+      <table class="w-full text-left">
+        <thead class="bg-slate-50 border-b border-slate-100">
+          <tr class="text-slate-500 text-xs font-bold">
+            <th>Course Code</th>
+            <th>Course Name</th>
+            <th>Faculty</th>
+            <th>Doctor</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="courses-table-body">
+        </tbody>
+      </table>
+      <div id="courses-pagination"
+     class="flex justify-center items-center gap-2 mt-6">
+      </div>
+    </div>
+  </div>
+
+  <!-- Section: Enrollment -->
+  <div class="section-content" id="section-enrollment">
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+      <div class="lg:col-span-1">
+        <div class="bg-white p-8 rounded-3xl border border-slate-100 shadow-sm sticky top-24">
+          <h3 class="text-xl font-bold mb-6">Enroll Student in Course</h3>
+          <div class="space-y-4"> 
+            <div>
+             <label class="block text-xs font-bold text-slate-500 mb-2">Faculty</label>
+             <select id="enroll-faculty" class="w-full bg-slate-50 border-none rounded-xl px-4 py-3 text-sm">
+               
+             </select>
+           </div>
+            <div>
+              <label class="block text-xs font-bold text-slate-500 mb-2">Search Student</label>
+              <select id="enroll-student"class="w-full bg-slate-50 border-none rounded-xl px-4 py-3 text-sm">
+              </select>
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-slate-500 mb-2">Select Course</label>
+              <select id="enroll-course" class="w-full bg-slate-50 border-none rounded-xl px-4 py-3 text-sm">
+                <option>Data Structures (CS201)</option>
+                <option>Algorithms (CS302)</option>
+              </select>
+            </div>
+            <button id="complete-enrollment-btn" class="w-full bg-primary-container text-white py-4 rounded-2xl font-bold shadow-lg shadow-purple-900/20 mt-4">Complete Enrollment</button>
+          </div>
+        </div>
+      </div>
+      <div class="lg:col-span-2">
+        <div class="bg-white p-8 rounded-3xl border border-slate-100 shadow-sm">
+          <h3 class="text-xl font-bold mb-6">Enrolled Students by Course</h3>
+          <div id="enrolled-list" class="space-y-3">
+            <div class="flex justify-between items-center p-4 bg-slate-50 rounded-2xl">
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-full bg-slate-200"></div>
+                <div>
+                  <p class="text-sm font-bold">Sarah Ahmed Kamal</p>
+                  <p class="text-[10px] text-slate-500">Enrolled: 2023/09/12</p>
+                </div>
+              </div>
+              <button class="text-error"><span class="material-symbols-outlined">person_remove</span></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+
+  <!-- Section: Results -->
+<div class="section-content" id="section-results">
+  <div class="bg-white rounded-3xl border border-slate-100 shadow-sm overflow-hidden">
+    <div class="p-8 bg-on-primary-fixed text-white flex justify-between items-center">
+      <div>
+        <h2 class="text-2xl font-bold">Results Management</h2>
+        <p class="text-white/60 text-sm">Review student results and issue final reports</p>
+      </div>
+      <div class="flex gap-3">
+
+  <div class="bg-white/10 px-5 py-3 rounded-2xl">
+
+    <p class="text-xs text-white/60">
+      Published Results
+    </p>
+
+    <p id="published-count"
+      class="text-xl font-bold text-white">
+      0
+    </p>
+
+  </div>
+
+  <div class="bg-white/10 px-5 py-3 rounded-2xl">
+
+    <p class="text-xs text-white/60">
+      Pending Results
+    </p>
+
+    <p id="pending-count"
+      class="text-xl font-bold text-orange-300">
+      0
+    </p>
+
+  </div>
+
+</div>
+    </div>
+    <div class="p-8">
+
+      <!-- Filters -->
+      <div class="flex gap-4 mb-6">
+        <select id="results-faculty-filter" class="bg-slate-50 border-none rounded-xl px-4 py-2 text-sm focus:ring-2 focus:ring-primary-container">
+          <option>Science</option>
+          <option>Computer Science</option>
+          <option>Engineering</option>
+          <option>Medicine</option>
+          <option>Business</option>
+          <option>Law</option>
+          <option>Commerce</option>
+          <option>Arts</option>
+        </select>
+        <input id="results-search" type="text" placeholder="Search student name..." 
+          class="bg-slate-50 border-none rounded-xl px-4 py-2 text-sm focus:ring-2 focus:ring-primary-container w-64"/>
+      </div>
+
+      <table class="w-full text-left border-separate border-spacing-y-2">
+        <thead>
+          <tr class="text-slate-400 text-xs font-bold">
+            <th class="pb-3 pl-4">Student Name</th>
+            <th class="pb-3">Student ID</th>
+            <th class="pb-3">Faculty</th>
+            <th class="pb-3">Status</th>
+            <th class="pb-3">Results</th>
+            <th class="pb-3 text-right pr-4">Details</th>
+          </tr>
+        </thead>
+        <tbody id="results-tbody">
+          
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+
+
+
+<!-- Section: Events & News -->
+<div class="section-content" id="section-assignments">
+  <div class="flex justify-between items-center mb-8">
+    <h2 class="text-2xl font-bold">Events & News</h2>
+    <div class="flex gap-3">
+      <button class="bg-primary-container text-white px-6 py-3 rounded-2xl font-bold" onclick="toggleModal('modal-add-news')">Add News</button>
+      <button class="bg-primary-container text-white px-6 py-3 rounded-2xl font-bold" onclick="toggleModal('modal-add-event')">Add  Event</button>
+      
+    </div>
+  </div>
+
+  <!-- Tabs -->
+  <div class="flex gap-6 mb-6 border-b border-slate-100">
+    <button id="tab-news" class="pb-3 font-bold text-primary-container border-b-2 border-primary-container text-sm" onclick="switchTab('news')">News</button>
+    <button id="tab-events" class="pb-3 font-bold text-slate-400 text-sm" onclick="switchTab('events')">Events</button>
+  </div>
+
+  <!-- News List -->
+  <div id="news-list" class="space-y-4">
+    <div class="bg-white p-6 rounded-3xl border border-slate-100 shadow-sm flex justify-between items-start">
+  <div class="flex-1 pr-4">
+    <div class="flex justify-between items-start mb-2">
+      <h4 class="font-bold text-lg">FBISE</h4>
+      <span class="px-3 py-1 bg-purple-100 text-primary-container rounded-full text-xs font-bold">May 01</span>
+    </div>
+    <p class="text-sm text-slate-500">The Federal Board of Intermediate and Secondary School Certificate results announced.</p>
+  </div>
+  <div class="flex gap-2 ml-4">
+    <button class="p-2 text-primary-container hover:bg-purple-50 rounded-lg"><span class="material-symbols-outlined text-lg">edit</span></button>
+    <button class="p-2 text-error hover:bg-red-50 rounded-lg" onclick="this.closest('.bg-white').remove()"><span class="material-symbols-outlined text-lg">delete</span></button>
+  </div>
+</div>
+</div>
+
+  <!-- Events List -->
+<div id="events-list" class="space-y-4 hidden">
+  <div class="bg-white p-6 rounded-3xl border border-slate-100 shadow-sm">
+    <div class="flex justify-between items-center gap-4">
+      <div class="flex-1">
+        <h4 class="font-bold text-lg mb-1">IDP Study Abroad Expo</h4>
+        <p class="text-sm text-slate-500 mb-1">Islamabad</p>
+        <p class="text-xs text-slate-400">Wed, 28 Feb 2024</p>
+      </div>
+      <div class="w-24 h-20 rounded-2xl bg-slate-200 overflow-hidden flex-shrink-0">
+  <img id="event-slider-img" src="images/event1.jpeg" alt="" class="w-full h-full object-cover" style="transition: opacity 0.3s ease;"/>
+</div>
+      <div class="flex gap-1 flex-shrink-0">
+        <button class="p-2 text-primary-container hover:bg-purple-50 rounded-lg"><span class="material-symbols-outlined text-lg">edit</span></button>
+        <button class="p-2 text-error hover:bg-red-50 rounded-lg" onclick="this.closest('.bg-white').remove()"><span class="material-symbols-outlined text-lg">delete</span></button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+  <!-- Modal: Add Course -->
+<div class="fixed inset-0 z-[60] bg-slate-900/40 backdrop-blur-sm flex items-center justify-center p-6 hidden" id="modal-add-course">
+
+  <div class="bg-white w-full max-w-2xl rounded-3xl shadow-2xl overflow-hidden">
+
+    <!-- Header -->
+    <div class="px-8 py-6 border-b border-slate-100 flex items-center justify-between">
+      <h3 class="text-2xl font-bold">Add New Course</h3>
+
+      <button
+        class="text-slate-400 hover:text-slate-600"
+        onclick="toggleModal('modal-add-course')">
+
+        <span class="material-symbols-outlined">close</span>
+      </button>
+    </div>
+
+    <!-- Body -->
+    <div class="p-8 grid grid-cols-1 md:grid-cols-2 gap-5">
+
+      <!-- Course Code -->
+      <div>
+        <label class="block text-xs font-bold text-slate-500 mb-2">
+          Course Code
+        </label>
+
+        <input
+          id="course-code"
+          class="w-full bg-slate-50 border-none rounded-2xl px-6 py-4 text-sm"
+          placeholder="CS201"
+          type="text"
+        />
+      </div>
+
+      <!-- Course Name -->
+      <div>
+        <label class="block text-xs font-bold text-slate-500 mb-2">
+          Course Name
+        </label>
+
+        <input
+          id="course-name"
+          class="w-full bg-slate-50 border-none rounded-2xl px-6 py-4 text-sm"
+          placeholder="Data Structures"
+          type="text"
+        />
+      </div>
+
+      <!-- Doctor -->
+      <div>
+        <label class="block text-xs font-bold text-slate-500 mb-2">
+          Lead Professor
+        </label>
+
+        <select
+          id="course-doctor"
+          class="w-full bg-slate-50 border-none rounded-2xl px-6 py-4 text-sm">
+        </select>
+      </div>
+
+      <!-- Faculty -->
+      <div>
+        <label class="block text-xs font-bold text-slate-500 mb-2">
+          Faculty
+        </label>
+
+        <select
+          id="course-faculty"
+          class="w-full bg-slate-50 border-none rounded-2xl px-6 py-4 text-sm">
+        </select>
+      </div>
+
+      <!-- Description -->
+      <div class="md:col-span-2">
+        <label class="block text-xs font-bold text-slate-500 mb-2">
+          Description
+        </label>
+
+        <textarea
+          id="course-description"
+          class="w-full bg-slate-50 border-none rounded-2xl px-6 py-4 text-sm"
+          rows="4"
+          placeholder="Course Description"></textarea>
+      </div>
+
+    </div> <!-- ✅ نهاية الـ Body -->
+    <div class="px-8 py-6 bg-slate-50 flex gap-4">
+
+    <button
+      id="save-course-btn"
+      class="flex-1 bg-primary-container text-white py-4 rounded-2xl font-bold">
+
+      Save Course
+
+    </button>
+
+    <button
+      onclick="toggleModal('modal-add-course')"
+      class="flex-1 bg-white border border-slate-200 text-slate-600 py-4 rounded-2xl font-bold">
+
+      Cancel
+
+    </button>
+
+</div>
+    
+
+  </div>
+</div>
+</main>
+
+ <!-- Modal: Add User -->
+<div id="modal-add-user"
+     class="hidden fixed inset-0 z-[60] bg-slate-900/40 backdrop-blur-sm items-center justify-center p-6">
+
+  <div class="bg-white w-full max-w-lg rounded-3xl shadow-2xl overflow-hidden">
+    <!-- Header -->
+    <div class="px-8 py-6 border-b border-slate-100 flex items-center justify-between">
+      <h3 class="text-xl font-bold">Add New User</h3>
+      <button onclick="toggleModal('modal-add-user')" class="text-slate-400">
+        <span class="material-symbols-outlined">close</span>
+      </button>
+    </div>
+
+    <!-- Body -->
+    <div class="p-8 space-y-4">
+
+      <div class="grid grid-cols-2 gap-4">
+        <div>
+          <label class="block text-xs font-bold text-slate-500 mb-2">Full Name</label>
+          <input id="input-name" class="w-full bg-slate-50 rounded-2xl px-6 py-4 text-sm" type="text"/>
+        </div>
+
+        <div>
+          <label class="block text-xs font-bold text-slate-500 mb-2">Role</label>
+          <select id="input-role" class="w-full bg-slate-50 rounded-2xl px-6 py-4 text-sm">
+            <option value="Student">Student</option>
+            <option value="Doctor">Doctor</option>
+            <option value="Admin">Admin</option>
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <label class="block text-xs font-bold text-slate-500 mb-2">National Id</label>
+        <input id="input-nationalid" class="w-full bg-slate-50 rounded-2xl px-6 py-4 text-sm" type="text"/>
+      </div>
+
+      <div>
+        <label class="block text-xs font-bold text-slate-500 mb-2">Email</label>
+        <input id="input-email" class="w-full bg-slate-50 rounded-2xl px-6 py-4 text-sm" type="email"/>
+      </div>
+
+      <div>
+        <label class="block text-xs font-bold text-slate-500 mb-2">Faculty</label>
+        <select id="input-faculty" class="w-full bg-slate-50 rounded-2xl px-6 py-4 text-sm"></select>
+      </div>
+
+      <div id="password-div">
+        <label class="block text-xs font-bold text-slate-500 mb-2">Password</label>
+        <input id="input-password" class="w-full bg-slate-50 rounded-2xl px-6 py-4 text-sm" type="password"/>
+      </div>
+
+    </div>
+
+    <!-- Footer -->
+    <div class="px-8 py-6 bg-slate-50 flex gap-4">
+      <button id="save-user-btn"
+        class="flex-1 bg-primary-container text-white py-4 rounded-2xl font-bold">
+        Save
+      </button>
+
+      <button onclick="toggleModal('modal-add-user')"
+        class="flex-1 bg-white border border-slate-200 text-slate-600 py-4 rounded-2xl font-bold">
+        Cancel
+      </button>
+    </div>
+
+  </div>
+</div>
+
+<!-- BottomNavBar (Mobile) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 py-3 bg-white/90 backdrop-blur-lg lg:hidden rounded-t-2xl border-t border-slate-100 shadow-[0_-4px_20px_rgba(139,26,107,0.08)]">
+  <a class="nav-item flex flex-col items-center text-[#8B1A6B]" href="#" onclick="showSection('dashboard')">
+    <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">home</span>
+    <span class="text-[10px] font-semibold mt-1">Home</span>
+  </a>
+  <a class="nav-item flex flex-col items-center text-slate-400" href="#" onclick="showSection('users')">
+    <span class="material-symbols-outlined">group</span>
+    <span class="text-[10px] font-semibold mt-1">Users</span>
+  </a>
+  <a class="nav-item flex flex-col items-center text-slate-400" href="#" onclick="showSection('courses')">
+    <span class="material-symbols-outlined">school</span>
+    <span class="text-[10px] font-semibold mt-1">Courses</span>
+  </a>
+  <a class="nav-item flex flex-col items-center text-slate-400" href="#" onclick="showSection('results')">
+    <span class="material-symbols-outlined">analytics</span>
+    <span class="text-[10px] font-semibold mt-1">Results</span>
+  </a>
+</nav>
+
+
+
+<!-- Modal: Add Faculty -->
+<div class="fixed inset-0 z-[60] bg-slate-900/40 backdrop-blur-sm flex items-center justify-center p-6 hidden" id="modal-add-faculty">
+  <div class="bg-white w-full max-w-lg rounded-3xl shadow-2xl overflow-hidden">
+    
+    <div class="px-8 py-6 border-b border-slate-100 flex items-center justify-between">
+      <h3 class="text-xl font-bold">Add Faculty / Department</h3>
+      <button class="text-slate-400" onclick="toggleModal('modal-add-faculty')">
+        <span class="material-symbols-outlined">close</span>
+      </button>
+    </div>
+
+    <div class="p-8 space-y-4">
+      <div>
+        <label class="block text-xs font-bold text-slate-500 mb-2">Faculty Name</label>
+        <input 
+          id="faculty-name"
+          class="w-full bg-slate-50 border-none rounded-2xl px-6 py-4 text-sm"
+          placeholder="Enter name..."
+          type="text"
+        />
+      </div>
+
+      <div>
+        <label class="block text-xs font-bold text-slate-500 mb-2">Dean Name</label>
+        <input 
+          id="faculty-dean"
+          class="w-full bg-slate-50 border-none rounded-2xl px-6 py-4 text-sm"
+          placeholder="Dr. ..."
+          type="text"
+        />
+      </div>
+    </div>
+
+    <div class="px-8 py-6 bg-slate-50 flex gap-4">
+      
+      <button 
+        id="save-faculty-btn"
+        class="flex-1 bg-primary-container text-white py-4 rounded-2xl font-bold flex items-center justify-center gap-2">
+        
+        <span class="material-symbols-outlined">save</span>
+        Add
+      </button>
+
+      <button 
+        class="flex-1 bg-white border border-slate-200 text-slate-600 py-4 rounded-2xl font-bold"
+        onclick="toggleModal('modal-add-faculty')">
+        Cancel
+      </button>
+
+    </div>
+
+  </div>
+</div>
+
+
+
+<!-- Modal: Add News -->
+<div class="fixed inset-0 z-[60] bg-slate-900/40 backdrop-blur-sm flex items-center justify-center p-6 hidden" id="modal-add-news">
+  <div class="bg-white w-full max-w-lg rounded-3xl shadow-2xl overflow-hidden">
+    <div class="px-8 py-6 border-b border-slate-100 flex items-center justify-between">
+      <h3 class="text-xl font-bold">Add News</h3>
+      <button class="text-slate-400" onclick="toggleModal('modal-add-news')">
+        <span class="material-symbols-outlined">close</span>
+      </button>
+    </div>
+    <div class="p-8 space-y-4">
+      <div>
+        <label class="block text-xs font-bold text-slate-500 mb-2">Title</label>
+        <input id="news-title" class="w-full bg-slate-50 border-none rounded-2xl px-6 py-4 text-sm" placeholder="News title..." type="text"/>
+      </div>
+      
+      <div>
+        <label class="block text-xs font-bold text-slate-500 mb-2">Description</label>
+        <textarea id="news-desc" class="w-full bg-slate-50 border-none rounded-2xl px-6 py-4 text-sm" rows="3" placeholder="News description..."></textarea>
+      </div>
+    </div>
+    <div class="px-8 py-6 bg-slate-50 flex gap-4">
+      <button id="save-news-btn" class="flex-1 bg-primary-container text-white py-4 rounded-2xl font-bold">Add News</button>
+      <button class="flex-1 bg-white border border-slate-200 text-slate-600 py-4 rounded-2xl font-bold" onclick="toggleModal('modal-add-news')">Cancel</button>
+    </div>
+  </div>
+</div>
+
+<!-- Modal: Add Event -->
+<div class="fixed inset-0 z-[60] bg-slate-900/40 backdrop-blur-sm flex items-center justify-center p-6 hidden" id="modal-add-event">
+  <div class="bg-white w-full max-w-lg rounded-3xl shadow-2xl overflow-hidden">
+    <div class="px-8 py-6 border-b border-slate-100 flex items-center justify-between">
+      <h3 class="text-xl font-bold">Add Event</h3>
+      <button class="text-slate-400" onclick="toggleModal('modal-add-event')">
+        <span class="material-symbols-outlined">close</span>
+      </button>
+    </div>
+    <div class="p-8 space-y-4">
+      <div>
+        <label class="block text-xs font-bold text-slate-500 mb-2">Event Title</label>
+        <input id="event-title" class="w-full bg-slate-50 border-none rounded-2xl px-6 py-4 text-sm" placeholder="Event title..." type="text"/>
+      </div>
+      <div>
+        <label class="block text-xs font-bold text-slate-500 mb-2">Description</label>
+        <input id="event-location" class="w-full bg-slate-50 border-none rounded-2xl px-6 py-4 text-sm" placeholder="Description..." type="text"/>
+      </div>
+      <div>
+        <label class="block text-xs font-bold text-slate-500 mb-2">Date</label>
+        <input id="event-date" class="w-full bg-slate-50 border-none rounded-2xl px-6 py-4 text-sm" type="date"/>
+      </div>
+    </div>
+    <div class="px-8 py-6 bg-slate-50 flex gap-4">
+      <button id="save-event-btn" class="flex-1 bg-primary-container text-white py-4 rounded-2xl font-bold">Add Event</button>
+      <button class="flex-1 bg-white border border-slate-200 text-slate-600 py-4 rounded-2xl font-bold" onclick="toggleModal('modal-add-event')">Cancel</button>
+    </div>
+  </div>
+</div>
+
+
+<!-- Modal: Transcript -->
+<div id="modal-transcript"
+class="hidden fixed inset-0 z-[60] bg-slate-900/40 backdrop-blur-sm flex items-center justify-center p-6">
+
+  <div class="bg-white w-full max-w-4xl rounded-3xl shadow-2xl overflow-hidden">
+
+    <!-- Header -->
+    <div class="px-8 py-6 border-b border-slate-100 flex items-center justify-between">
+
+      <div>
+
+        <h3 id="tr-name"
+          class="text-2xl font-bold">
+        </h3>
+
+        <p id="tr-faculty"
+          class="text-sm text-slate-500 mt-1">
+        </p>
+
+      </div>
+
+      <button
+        onclick="toggleModal('modal-transcript')"
+        class="text-slate-400">
+
+        <span class="material-symbols-outlined">
+          close
+        </span>
+
+      </button>
+
+    </div>
+
+    <!-- Body -->
+    <div class="p-8">
+
+      <div class="overflow-x-auto">
+
+        <table class="w-full text-left">
+
+          <thead>
+
+            <tr class="text-slate-400 text-xs font-bold">
+
+              <th class="pb-4">Course</th>
+
+              <th class="pb-4">Doctor</th>
+
+              <th class="pb-4">Midterm</th>
+
+              <th class="pb-4">Final</th>
+
+              <th class="pb-4">Total</th>
+
+            </tr>
+
+          </thead>
+
+          <tbody id="transcript-results-body">
+
+          </tbody>
+
+        </table>
+
+      </div>
+
+    </div>
+
+    <!-- Footer -->
+    <div class="px-8 py-6 bg-slate-50 flex gap-4">
+
+      <button
+        id="publish-results-btn"
+        class="flex-1 bg-primary-container text-white py-4 rounded-2xl font-bold">
+
+        Publish Results
+
+      </button>
+
+      <button
+        onclick="toggleModal('modal-transcript')"
+        class="flex-1 bg-white border border-slate-200 text-slate-600 py-4 rounded-2xl font-bold">
+
+        Close
+
+      </button>
+
+    </div>
+
+  </div>
+
+</div>
+   
+<!-- JavaScript -->
+ <script src="js/api.js"></script>
+<script src="js/users.js"></script> 
+<script src="js/faculty.js"></script>
+<script src="js/courses.js"></script>
+<script src="js/enrollment.js"></script>
+<script src="js/results.js"></script>
+<script src="js/news.js"></script>
+<script src="js/events.js"></script>
+<script src="js/ai.js"></script>
+<script src="js/script.js"></script> 
+
+</body>
+</html>
